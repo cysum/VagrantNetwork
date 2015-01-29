@@ -17,11 +17,15 @@ Vagrant.configure(2) do |config|
  # config.vm.provision "shell", path: "./scripts/provisioning/apache2.sh"
 
  # Install Php 
- config.vm.provision "shell", path: "./scripts/provisioning/php.sh"
+ # config.vm.provision "shell", path: "./scripts/provisioning/php.sh"
 
  # Install nginx
- config.vm.provision "shell", path: "./scripts/provisioning/nginx.sh"
+ # config.vm.provision "shell", path: "./scripts/provisioning/nginx.sh"
  
+ # Install mysql 
+ # config.vm.provision "shell", path: "./scripts/provisioning/mysql.sh"
+   config.vm.provision "shell", path: "./scripts/provisioning/mysql.sh", args: ["root", "2.3", "true"]
 
-
+ # Install MariaDB
+   config.vm.provision "shell", path: "./scripts/provisioning/maria.sh", args: ["root", "true"] 
 end
